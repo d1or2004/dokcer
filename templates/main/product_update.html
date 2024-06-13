@@ -1,0 +1,46 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="col-md-6">
+                        <div class="wow fadeInUp" data-wow-delay="0.2s">
+                            <form method="POST">
+                                {% csrf_token %}
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="title" name="title" placeholder="Title" value="{{product.title}}">
+                                            <label for="title">Title</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="description" name="description" placeholder="Description" value="{{product.description}}">
+                                            <label for="description">Description</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="price" name="price" placeholder="Price" value="{{product.price}}">
+                                            <label for="price">Price</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="price_type" name="price_type" placeholder="Price Type" value="{{product.price_type}}">
+                                            <label for="price_type">Price Type</label>
+                                        </div>
+                                    </div>
+<!--                                    <div class="col-12">-->
+<!--                                        <div class="form-floating">-->
+<!--                                            <input type="text" class="form-control" id="product_type" name="product_type" placeholder="Product type" value="{{product.product_type}}">-->
+<!--                                            <label for="product_type">Product Type</label>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+                                    <div class="col-12">
+                                        <button class="btn btn-primary w-100 py-3"  type="submit">Send Message</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+{% endblock %}

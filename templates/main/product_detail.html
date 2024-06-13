@@ -1,0 +1,31 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+        <div id="" class="tab-pane fade show p-0 active">
+                        <div class="row g-4">
+                            <div class="col-lg-6">
+                                <div class="d-flex align-items-center">
+                                    <img class="flex-shrink-0 img-fluid rounded" src="{{ product.image.url }}" alt=""
+                                         style="width: 80px;">
+                                    <div class="w-100 d-flex flex-column text-start ps-4">
+                                        <h5 class="d-flex justify-content-between border-bottom pb-2">
+
+                                                <span>{{ product.title }}</span>
+
+
+                                            <span class="text-primary">{{product.price}} {{product.price_type}}</span>
+                                            <a href="{% url 'product-update' product.id %}">
+                                                <button type="submit" class="btn btn-primary">Update</button>
+                                            </a>
+                                            <a href="{% url 'product-delete' product.id %}">
+                                                <button type="button" class="btn btn-danger">Delete</button>
+                                            </a>
+
+                                        </h5>
+                                        <small class="fst-italic">{{product.description}}</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+{% endblock %}

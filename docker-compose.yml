@@ -1,0 +1,49 @@
+version: '3'
+services:
+  backend_service:
+    build: .
+    env_file:
+      - .env
+    ports:
+      - '8080:8000'
+    volumes:
+      - static_volume:/app/static
+      - media_volume:/app/media
+    depends_on:
+      - db_service
+
+  db_service:
+    image: postgres:alpine
+    environment:
+      - POSTGRES_PASSWORD=1
+    ports:
+      - 5433:5432
+    volumes:
+      - olx_db:/var/lib/postgresql/data
+
+
+
+volumes:
+  static_volume:
+  media_volume:
+  redis_volume:
+  olx_db:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
